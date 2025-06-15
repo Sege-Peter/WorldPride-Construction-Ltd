@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Pride Construction Ltd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+  header {
+  background: #003366;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .team-member h4 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 0.8rem;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ <header>
+  <div style="display: flex; align-items: center; gap: 1rem;">
+   <img src="https://via.placeholder.com/50x50?text=Logo" alt="Logo" style="height: 50px;" />
+    <h1>World Pride Construction Ltd</h1>
+  </div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <nav id="nav">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#blog">Blog</a>
+    <a href="#careers">Careers</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+  <section class="hero">
+    <h2>Building Excellence with Pride</h2>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>World Pride Construction Ltd is a premier construction firm committed to delivering top-notch engineering, construction, and design solutions. With a reputation built on quality, integrity, and innovation, we transform visions into reality.</p>
+  </section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <i class="fas fa-building fa-2x" style="color: #003366;"></i>
+      <h3>Building Construction</h3>
+      <p>High-quality residential, commercial, and industrial structures tailored to your needs.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-drafting-compass fa-2x" style="color: #003366;"></i>
+      <h3>Architectural Design</h3>
+      <p>Creative and sustainable designs that combine function, form, and innovation.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-tools fa-2x" style="color: #003366;"></i>
+      <h3>Renovation & Repairs</h3>
+      <p>Expert solutions for upgrading, remodeling, and restoring existing structures.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="projects">
+    <h2>Recent Projects</h2>
+    <div class="grid grid-3">
+      <div class="card"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" width="100%" /><p>Modern office complex</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1606788075761-2a9a51d2c4b0" width="100%" /><p>Luxury apartments</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" width="100%" /><p>Urban shopping mall</p></div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <p>“World Pride Construction exceeded our expectations in quality and professionalism.” – Jane M.</p>
+      </div>
+      <div class="card">
+        <p>“Reliable, innovative, and always on time. Highly recommended!” – Michael K.</p>
+      </div>
+      <div class="card">
+        <p>“Excellent communication and execution throughout our office project.” – Brenda T.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>Latest Blog</h2>
+    <div class="card">
+      <h3>Top 5 Trends in Modern Construction</h3>
+      <p>From green building to smart homes, learn how innovation is reshaping the construction industry.</p>
+    </div>
+  </section>
+
+  <section id="careers">
+    <h2>Join Our Team</h2>
+    <p>We’re always looking for talented professionals. Explore open positions and grow your career with us.</p>
+  </section>
+
+  <section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="grid grid-3">
+      <div class="card team-member">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328f01f1" alt="CEO" />
+        <h4>Jane Doe – CEO</h4>
+        <p>Visionary leader with a passion for excellence and innovation in construction.</p>
+      </div>
+      <div class="card team-member">
+        <img src="https://images.unsplash.com/photo-1614281072442-59f6fa6d8a3a" alt="Project Manager" />
+        <h4>John Smith – Project Manager</h4>
+        <p>Expert in managing large-scale construction projects with precision and efficiency.</p>
+      </div>
+      <div class="card team-member">
+        <img src="https://images.unsplash.com/photo-1623607924560-65f83c7db89c" alt="Lead Architect" />
+        <h4>Alice Brown – Lead Architect</h4>
+        <p>Designs creative, functional, and sustainable architectural solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+  <h2>Contact Us</h2>
+  <form class="contact-form" action="https://formsubmit.co/el/rogewa" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <!-- Anti-spam honeypot field (hidden) -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Optional redirect after submission -->
+    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+ <footer>
+  <div style="margin-bottom: 1rem;">
+    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  <p>&copy; 2025 World Pride Construction Ltd. All rights reserved.</p>
+</footer>
+
+
+  <script>
+    const form = document.querySelector(".contact-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then(() => {
+        alert("✅ Thank you! Your message has been sent.");
+        form.reset();
+      })
+      .catch(() => {
+        alert("❌ Oops! Something went wrong. Please try again.");
+      });
+    function toggleMenu() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('show');
+    }
+  </script>
+</body>
+
+</html>
