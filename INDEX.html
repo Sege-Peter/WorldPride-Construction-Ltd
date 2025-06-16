@@ -261,9 +261,9 @@
     </div>
   </section>
 
-  <section id="contact">
+<section id="contact">
   <h2>Contact Us</h2>
-  <form class="contact-form" action="https://formsubmit.co/el/rogewa" method="POST">
+  <form class="contact-form" id="contactForm" action="https://formsubmit.co/el/rogewa" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -271,12 +271,20 @@
     <!-- Anti-spam honeypot field (hidden) -->
     <input type="text" name="_honey" style="display:none">
 
-    <!-- Optional redirect after submission -->
+    <!-- Disable CAPTCHA -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Optional redirect -->
     <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
 
     <button type="submit">Send Message</button>
+    <p id="formStatus" style="margin-top:10px;"></p>
   </form>
+
+  <!-- Include the JS file -->
+  <script src="contact.js"></script>
 </section>
+
 
  <footer>
   <div style="margin-bottom: 1rem;">
@@ -290,24 +298,21 @@
 
 
   <script>
-    const form = document.querySelector(".contact-form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then(() => {
-        alert("✅ Thank you! Your message has been sent.");
-        form.reset();
-      })
-      .catch(() => {
-        alert("❌ Oops! Something went wrong. Please try again.");
-      });
+  document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", function () {
+    status.innerText = "Sending message...";
+    status.style.color = "gray";
+  });
+
+  // Optional: Clear message after redirect back (in case no thank-you page)
+  if (window.location.href.includes("thank-you")) {
+    alert("Thank you! Your message has been sent.");
+  }
+});
+
     function toggleMenu() {
       const nav = document.getElementById('nav');
       nav.classList.toggle('show');
